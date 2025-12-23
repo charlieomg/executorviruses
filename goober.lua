@@ -9436,10 +9436,10 @@ slock.TextColor3 = Color3.fromRGB(255, 255, 255)
 slock.TextSize = 23.000
 slock.MouseButton1Click:connect(function()
         if slockk then 
-                queue.Text = "Reborn by __.whitecat.__  SLOCK: false"
+                queue.Text = "ultimate fe bypass  SLOCK: false"
                 slockk = false
         else
-                queue.Text = "Reborn by __.whitecat.__   SLOCK: true"
+                queue.Text = "ultimate fe bypass   SLOCK: true"
                 slockk = true
         end
 end)
