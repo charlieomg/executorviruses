@@ -607,9 +607,9 @@ coroutine.wrap(CAHA_fake_script)()
 if not game:IsLoaded() then game.Loaded:Wait() end
 
 --Discord Invite
-local notificationShown = false
+local notificationShown = true
 local TweenService = game:GetService("TweenService")
-local discorInvite = "https://discord.gg/9w7R9HsBvJ"
+local discordInvite = "yes"
 
 local function createNotification()
 	local gui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
