@@ -4443,7 +4443,7 @@ if not inDatabase then
 	sgui:SetCore("SendNotification", {
 		Title = "Test";
 		Text = "This is a test notification",
-		Duration = 300,
+		Duration = 1,
 		Button1 = "Yes",
 		Button2 = "No",
 		Icon = "rbxassetid://73191850208831",
