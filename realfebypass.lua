@@ -4445,8 +4445,8 @@ if not inDatabase then
 		Title = "test";
 		Text = "test",
 		Duration = 300,
-		Button1 = "test",
-		Button2 = "test",
+		Button1 = "Yes",
+		Button2 = "No",
 		Icon = "rbxassetid://73191850208831",
 		Callback = bindable
 	})
