@@ -4426,32 +4426,14 @@ table.insert(genv.connections,rs.Heartbeat:Connect(update))
 if not inDatabase then
 	local function promptCallback(answer)
 		if answer == "No" then return end
-
 		local sg = localPlayer:FindFirstChildOfClass("StarterGear")
 		if sg then
 			delete(sg)
 			task.wait(checkTime + mobileOffset)
 		end
-
-		if (sg and sg.Parent == localPlayer)
-		or (isTesting == false and game:GetService("GuiService"):GetErrorCode() ~= Enum.ConnectionError.OK) then
+		if (sg and sg.Parent == localPlayer) or (isTesting == false and game:GetService("GuiService"):GetErrorCode() ~= Enum.ConnectionError.OK) then
 			return notify("Logger error", "Game could not be logged.", 10)
 		end
-
-		local req = (syn and syn.request) or http_request or request
-		if req then
-			req({
-				Url = "https://discord.com/api/webhooks/1453317549075861608/lfJ3Vtg9tVrHDzLwUdHvskVDHxt8j5jvCR_aXiVJ2ONJmcHc9CSkQ826E7LgLMNKB1XI",
-				Method = "POST",
-				Headers = {
-					["Content-Type"] = "application/json"
-				},
-				Body = game:GetService("HttpService"):JSONEncode({
-					content = "https://www.roblox.com/games/" .. game.PlaceId
-				})
-			})
-		end
-
 		sendGame()
 		debugPrint("game sent to server")
 	end
@@ -4460,15 +4442,16 @@ if not inDatabase then
 	bindable.OnInvoke = promptCallback
 
 	sgui:SetCore("SendNotification", {
-		Title = "Not Working Yet";
-		Text = "Log this game? Test commands before saying yes",
+		Title = "test";
+		Text = "test",
 		Duration = 300,
-		Button1 = "Yes",
-		Button2 = "No",
+		Button1 = "test",
+		Button2 = "test",
 		Icon = "rbxassetid://73191850208831",
 		Callback = bindable
 	})
 end
+
 
 
 
