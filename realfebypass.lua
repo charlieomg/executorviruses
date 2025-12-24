@@ -1,6 +1,5 @@
 
 
-
 local cloneref = cloneref or function(a) return a end
 local coreGui = cloneref(game:GetService("CoreGui"))
 local players = cloneref(game:GetService("Players"))
@@ -198,7 +197,7 @@ template.BorderSizePixel = 0
 template.Position = UDim2.new(0, 0, 0.032717593, 0)
 template.Size = UDim2.new(0.999999821, 0, 0.323825359, 0)
 template.Font = Enum.Font.SourceSans
-template.Text = "ERROR please report this to doug."
+template.Text = "error"
 template.TextColor3 = Color3.fromRGB(200, 200, 200)
 template.TextScaled = true
 template.TextSize = 14.000
@@ -607,10 +606,10 @@ coroutine.wrap(CAHA_fake_script)()
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 
-
+--Discord Invite
 local notificationShown = false
 local TweenService = game:GetService("TweenService")
-local discordInvite = "created by doug"
+local discorInvite = "https://discord.gg/9w7R9HsBvJ"
 
 local function createNotification()
 	local gui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -665,7 +664,7 @@ local function createNotification()
 
 
 	local label = Instance.new("TextLabel")
-	label.Text = "DougFD"
+	label.Text = "Join our Discord Server!"
 	label.TextColor3 = Color3.fromRGB(159, 159, 159)
 	label.Font = Enum.Font.GothamBold
 	label.TextSize = 14
@@ -675,7 +674,16 @@ local function createNotification()
 	label.LayoutOrder = 1
 	label.Parent = container
 
-	
+	local link = Instance.new("TextLabel")
+	link.Text = discordInvite
+	link.TextColor3 = Color3.fromRGB(159, 159, 159)
+	link.Font = Enum.Font.Gotham
+	link.TextSize = 13
+	link.TextXAlignment = Enum.TextXAlignment.Center
+	link.BackgroundTransparency = 1
+	link.Size = UDim2.new(1, 0, 0, 18)
+	link.LayoutOrder = 2
+	link.Parent = container
 
 	local buttonContainer = Instance.new("Frame")
 	buttonContainer.BackgroundTransparency = 1
@@ -980,7 +988,7 @@ local hasBlurred = false
 local notificationDismissed = false
 
 local appearSoundId = "rbxassetid://88591874532589" -- you can change this to your desired sound with an id. cool right?
-local discordInvite = "error displaying text"-- same goes for this link, but i'd prefer if you keep it as quirky ;)
+local discordInvite = "https://discord.gg/9w7R9HsBvJ"-- same goes for this link, but i'd prefer if you keep it as quirky ;)
 
 local function playAppearSound()
 	local sound = Instance.new("Sound")
@@ -1064,7 +1072,7 @@ local function showFirstTimeNotification()
 
 
 	local label = Instance.new("TextLabel")
-	label.Text = "DougFD"
+	label.Text = "Join our Discord Server!"
 	label.TextColor3 = Color3.fromRGB(159, 159, 159)
 	label.Font = Enum.Font.GothamBold
 	label.TextSize = 14
@@ -1074,7 +1082,16 @@ local function showFirstTimeNotification()
 	label.LayoutOrder = 1
 	label.Parent = container
 
-
+	local link = Instance.new("TextLabel")
+	link.Text = discordInvite
+	link.TextColor3 = Color3.fromRGB(159, 159, 159)
+	link.Font = Enum.Font.Gotham
+	link.TextSize = 13
+	link.TextXAlignment = Enum.TextXAlignment.Center
+	link.BackgroundTransparency = 1
+	link.Size = UDim2.new(1, 0, 0, 18)
+	link.LayoutOrder = 2
+	link.Parent = container
 
 	local buttonContainer = Instance.new("Frame")
 	buttonContainer.BackgroundTransparency = 1
@@ -1107,7 +1124,7 @@ local function showFirstTimeNotification()
 		end)
 		button.Text = "Copied!"
 		task.delay(1, function()
-			button.Text = "copy this text"
+			button.Text = "Copy Invite"
 		end)
 	end)
 
@@ -1352,7 +1369,7 @@ if not genv.foundRemote then
 	remotePath.Text = "game isn't supported, closing..."
 	task.wait(3)
 	gui:Destroy() 
-	return debugPrint("no silly remote found :( ") 
+	return debugPrint("no silly remote found :( try a game from #confirmed-games in the server. Invite: https://discord.gg/9w7R9HsBvJ") 
 end
 
 if hasFiles() and getGameList()[tostring(game.PlaceId)] == nil then
@@ -4168,7 +4185,7 @@ addCommand("reanim",function()
 end, {"reanimate"}, 3)
 
 --[[Add scrolling command list]]--
-local scrollText = "DougFD | the kinda good fe bypasser"
+local scrollText = "DougFD"
 if not isMobile then
 	scrollText ..= "press ; to open/hide the Ui | "
 end
@@ -4314,7 +4331,7 @@ local cmdData = {
 	["walkspeed"] = "Sets your walk speed.",
 	["wither"] = "Slowly deletes limbs from players over time.",
 	["witherws"] = "Slowly deletes workspace parts over time.",
-	["close"] = "Safely shuts down DougFD by destroying the UI and disconnecting all events.",
+	["close"] = "Safely shuts down QuirkyCMD by destroying the UI and disconnecting all events.",
 }
 
 --[[right scaling and creation of the command list with its description.]]--
@@ -4423,8 +4440,8 @@ if not inDatabase then
 	bindable.OnInvoke = promptCallback
 
 	sgui:SetCore("SendNotification", {
-		Title = "DougFD";
-		Text = "Say yes if the commands work",
+		Title = "Not Working Yet";
+		Text = "Log this game? Test commands before saying yes",
 		Duration = 300,
 		Button1 = "Yes",
 		Button2 = "No",
@@ -4435,46 +4452,4 @@ if not inDatabase then
 
 end
 
-debugPrint("67 loaded successfully!")
-
-local UIS = game:GetService("UserInputService")
-
-local parentGui = gethui and gethui() or game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
-local gui = Instance.new("ScreenGui")
-gui.Name = "XenoDecalGui"
-gui.ResetOnSpawn = false
-gui.Parent = parentGui
-
-local img = Instance.new("ImageButton")
-img.Size = UDim2.new(0, 150, 0, 150)
-img.Position = UDim2.new(0, 10, 1, -160)
-img.BackgroundTransparency = 1
-img.Active = true
-img.Image = "rbxthumb://type=Asset&id=59414130&w=420&h=420"
-img.Parent = gui
-
-local dragging = false
-local dragOffset
-
-img.InputBegan:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-		dragging = true
-		dragOffset = input.Position - img.AbsolutePosition
-	end
-end)
-
-img.InputEnded:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-		dragging = false
-	end
-end)
-
-UIS.InputChanged:Connect(function(input)
-	if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
-		img.Position = UDim2.fromOffset(
-			input.Position.X - dragOffset.X,
-			input.Position.Y - dragOffset.Y
-		)
-	end
-end)
+debugPrint("D loaded successfully!")
