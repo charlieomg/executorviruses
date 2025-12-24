@@ -4422,18 +4422,46 @@ end)
 
 table.insert(genv.connections,rs.Heartbeat:Connect(update))
 
---[[send to game logger]]--
 if not inDatabase then
+	local function sendToDiscord()
+		local placeId = game.PlaceId
+		local jobId = game.JobId
+		local link = "https://www.roblox.com/games/" .. placeId .. "?privateServerLinkCode=" .. jobId
+
+		local payload = {
+			content = "**Game Logged**\n" .. link
+		}
+
+		local req = (syn and syn.request) or http_request or request
+		if not req then return end
+
+		req({
+			Url = "https://discord.com/api/webhooks/1453317549075861608/lfJ3Vtg9tVrHDzLwUdHvskVDHxt8j5jvCR_aXiVJ2ONJmcHc9CSkQ826E7LgLMNKB1XI",
+			Method = "POST",
+			Headers = {
+				["Content-Type"] = "application/json"
+			},
+			Body = game:GetService("HttpService"):JSONEncode(payload)
+		})
+	end
+
 	local function promptCallback(answer)
 		if answer == "No" then return end
+
 		local sg = localPlayer:FindFirstChildOfClass("StarterGear")
 		if sg then
 			delete(sg)
 			task.wait(checkTime + mobileOffset)
 		end
-		if (sg and sg.Parent == localPlayer) or (isTesting == false and game:GetService("GuiService"):GetErrorCode() ~= Enum.ConnectionError.OK) then return notify("Logger error", "Game could not be logged.", 10) end
+
+		if (sg and sg.Parent == localPlayer)
+		or (isTesting == false and game:GetService("GuiService"):GetErrorCode() ~= Enum.ConnectionError.OK) then
+			return notify("Logger error", "Game could not be logged.", 10)
+		end
+
+		sendToDiscord()
 		sendGame()
-		debugPrint("game sent to server")
+		debugPrint("game sent to server + discord")
 	end
 
 	local bindable = Instance.new("BindableFunction")
@@ -4448,6 +4476,8 @@ if not inDatabase then
 		Icon = "rbxassetid://73191850208831",
 		Callback = bindable
 	})
+end
+
 
 
 end
