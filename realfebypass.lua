@@ -609,7 +609,7 @@ if not game:IsLoaded() then game.Loaded:Wait() end
 --Discord Invite
 local notificationShown = true
 local TweenService = game:GetService("TweenService")
-local discordInvite = "yes"
+local discordInvite = "https://discord.gg/discord"
 
 local function createNotification()
 	local gui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
