@@ -1,5 +1,6 @@
 
 
+
 local cloneref = cloneref or function(a) return a end
 local coreGui = cloneref(game:GetService("CoreGui"))
 local players = cloneref(game:GetService("Players"))
@@ -607,7 +608,7 @@ coroutine.wrap(CAHA_fake_script)()
 if not game:IsLoaded() then game.Loaded:Wait() end
 
 --Discord Invite
-local notificationShown = true
+local notificationShown = false
 local TweenService = game:GetService("TweenService")
 local discordInvite = "https://discord.gg/discord"
 
@@ -4431,9 +4432,7 @@ if not inDatabase then
 			delete(sg)
 			task.wait(checkTime + mobileOffset)
 		end
-		if (sg and sg.Parent == localPlayer) or (isTesting == false and game:GetService("GuiService"):GetErrorCode() ~= Enum.ConnectionError.OK) then
-			return notify("Logger error", "Game could not be logged.", 10)
-		end
+		if (sg and sg.Parent == localPlayer) or (isTesting == false and game:GetService("GuiService"):GetErrorCode() ~= Enum.ConnectionError.OK) then return notify("Logger error", "Game could not be logged.", 10) end
 		sendGame()
 		debugPrint("game sent to server")
 	end
@@ -4442,14 +4441,16 @@ if not inDatabase then
 	bindable.OnInvoke = promptCallback
 
 	sgui:SetCore("SendNotification", {
-		Title = "test";
-		Text = "test",
+		Title = "Test";
+		Text = "This is a test notification",
 		Duration = 300,
 		Button1 = "Yes",
 		Button2 = "No",
 		Icon = "rbxassetid://73191850208831",
 		Callback = bindable
 	})
-end
-debugPrint("D loaded successfully!")
 
+
+end
+
+debugPrint("D loaded successfully!")
