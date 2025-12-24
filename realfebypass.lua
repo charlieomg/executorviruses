@@ -774,7 +774,7 @@ local modernChat = game:GetService("TextChatService").ChatVersion == Enum.ChatVe
 local chatEvents = (not modernChat) and rStorage:FindFirstChild("DefaultChatSystemChatEvents")
 local mobileOffset = isMobile and 0.1 or 0
 local prefix = ";"
-local prefixEnum = Enum.KeyCode.Semicolon
+local prefixEnum = Enum.KeyCode.SemiColon
 -- credits to itzyaboyluq on github for the word list
 local wordList = {"delete", "remove", "destroy", "clean", "clear","bullet", "bala", "shoot", "shot", "fire", "segway", "handless", "sword", "attack", "despawn", "deletar", "apagar", "handto", "close"}
 local camera = workspace.CurrentCamera
