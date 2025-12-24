@@ -607,10 +607,10 @@ coroutine.wrap(CAHA_fake_script)()
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 
---Discord Invite
+
 local notificationShown = false
 local TweenService = game:GetService("TweenService")
-local discordInvite = "https://discord.gg/9w7R9HsBvJ"
+local discordInvite = "created by doug"
 
 local function createNotification()
 	local gui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -665,7 +665,7 @@ local function createNotification()
 
 
 	local label = Instance.new("TextLabel")
-	label.Text = "Join our Discord Server!"
+	label.Text = "DougFD"
 	label.TextColor3 = Color3.fromRGB(159, 159, 159)
 	label.Font = Enum.Font.GothamBold
 	label.TextSize = 14
@@ -989,7 +989,7 @@ local hasBlurred = false
 local notificationDismissed = false
 
 local appearSoundId = "rbxassetid://88591874532589" -- you can change this to your desired sound with an id. cool right?
-local discordInvite = "https://discord.gg/9w7R9HsBvJ"-- same goes for this link, but i'd prefer if you keep it as quirky ;)
+local discordInvite = "error displaying text"-- same goes for this link, but i'd prefer if you keep it as quirky ;)
 
 local function playAppearSound()
 	local sound = Instance.new("Sound")
@@ -1073,7 +1073,7 @@ local function showFirstTimeNotification()
 
 
 	local label = Instance.new("TextLabel")
-	label.Text = "Join our Discord Server!"
+	label.Text = "DougFD"
 	label.TextColor3 = Color3.fromRGB(159, 159, 159)
 	label.Font = Enum.Font.GothamBold
 	label.TextSize = 14
@@ -1125,7 +1125,7 @@ local function showFirstTimeNotification()
 		end)
 		button.Text = "Copied!"
 		task.delay(1, function()
-			button.Text = "Copy Invite"
+			button.Text = "copy this text"
 		end)
 	end)
 
