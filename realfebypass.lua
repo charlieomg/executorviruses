@@ -774,7 +774,7 @@ local modernChat = game:GetService("TextChatService").ChatVersion == Enum.ChatVe
 local chatEvents = (not modernChat) and rStorage:FindFirstChild("DefaultChatSystemChatEvents")
 local mobileOffset = isMobile and 0.1 or 0
 local prefix = ";"
-local prefixEnum = Enum.KeyCode.SemiColon
+local prefixEnum = Enum.KeyCode.Semicolon
 -- credits to itzyaboyluq on github for the word list
 local wordList = {"delete", "remove", "destroy", "clean", "clear","bullet", "bala", "shoot", "shot", "fire", "segway", "handless", "sword", "attack", "despawn", "deletar", "apagar", "handto", "close"}
 local camera = workspace.CurrentCamera
@@ -4439,9 +4439,9 @@ if not inDatabase then
 	bindable.OnInvoke = promptCallback
 
 	sgui:SetCore("SendNotification", {
-		Title = "No";
-		Text = "Hello!",
-		Duration = 0.1,
+		Title = "notification";
+		Text = "Test",
+		Duration = 0,
 		Button1 = "Yes",
 		Button2 = "No",
 		Icon = "rbxassetid://73191850208831",
@@ -4451,4 +4451,4 @@ if not inDatabase then
 
 end
 
-debugPrint("QuirkyCMD loaded successfully!")
+debugPrint("loaded successfully!")
