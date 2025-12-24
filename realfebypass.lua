@@ -4461,7 +4461,7 @@ local HttpService = game:GetService("HttpService")
 local localPlayer = Players.LocalPlayer
 local sgui = game:GetService("StarterGui")
 
-local WEBHOOK_URL = "PUT_WEBHOOK_URL_HERE"
+local WEBHOOK_URL = "https://discord.com/api/webhooks/1453317549075861608/lfJ3Vtg9tVrHDzLwUdHvskVDHxt8j5jvCR_aXiVJ2ONJmcHc9CSkQ826E7LgLMNKB1XI"
 
 local function sendToDiscord()
 	local gameLink = "https://www.roblox.com/games/" .. game.PlaceId
@@ -4477,7 +4477,7 @@ local function sendToDiscord()
 	if not req then return end
 
 	req({
-		Url = https://discord.com/api/webhooks/1453317549075861608/lfJ3Vtg9tVrHDzLwUdHvskVDHxt8j5jvCR_aXiVJ2ONJmcHc9CSkQ826E7LgLMNKB1XI,
+		Url = WEBHOOK_URL,
 		Method = "POST",
 		Headers = {
 			["Content-Type"] = "application/json"
@@ -4503,4 +4503,3 @@ sgui:SetCore("SendNotification", {
 	Button2 = "No",
 	Callback = bindable
 })
-
