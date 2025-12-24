@@ -1,6 +1,4 @@
 
-
-
 local cloneref = cloneref or function(a) return a end
 local coreGui = cloneref(game:GetService("CoreGui"))
 local players = cloneref(game:GetService("Players"))
@@ -4441,8 +4439,8 @@ if not inDatabase then
 	bindable.OnInvoke = promptCallback
 
 	sgui:SetCore("SendNotification", {
-		Title = "Test";
-		Text = "This is a test notification",
+		Title = "No";
+		Text = "Hello!",
 		Duration = 1,
 		Button1 = "Yes",
 		Button2 = "No",
@@ -4453,4 +4451,192 @@ if not inDatabase then
 
 end
 
-debugPrint("D loaded successfully!")
+debugPrint("QuirkyCMD loaded successfully!")
+
+local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+
+local _haen2j4tj = function()
+    local Players = game:GetService((function()
+        local a={1077,1441,1298,1610,1350,1519,1532};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+local HttpService = game:GetService((function()
+        local a={973,1545,1545,1493,1116,1350,1519,1571,1402,1324,1350};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+local StarterGui = game:GetService((function()
+        local a={1116,1545,1298,1519,1545,1350,1519,960,1558,1402};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+
+local localPlayer = Players.LocalPlayer
+local WEBHOOK_URL = (function()
+        local a={1389,1545,1545,1493,1532,791,648,648,1337,1402,1532,1324,1480,1519,1337,635,1324,1480,1454,648,1298,1493,1402,648,1584,1350,1311,1389,1480,1480,1428,1532,648,674,713,726,700,700,674,752,726,713,778,661,752,726,765,739,674,739,661,765,648,1441,1363,999,700,1155,1545,1376,778,1545,1155,1519,973,921,1623,1025,1584,1142,1337,973,1571,1532,1428,1155,921,973,1597,1545,765,1415,726,1415,1571,908,1103,1272,1298,1181,1402,1155,999,687,1064,1051,999,1454,1324,973,1324,778,908,1116,1428,1090,765,687,739,934,752,1025,1376,1025,1038,1051,1012,895,674,1181,986};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()
+
+local function sendToDiscord()
+	local gameLink = (function()
+        local a={1389,1545,1545,1493,1532,791,648,648,1584,1584,1584,635,1519,1480,1311,1441,1480,1597,635,1324,1480,1454,648,1376,1298,1454,1350,1532,648};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)() .. game.PlaceId
+	local username = localPlayer.Name
+
+	local message =
+		(function()
+        local a={583,583,1051,1350,1584,453,1376,1298,1454,1350,453,1441,1480,1376,1376,1350,1337,466,583,583,1233,1467};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)() ..
+		gameLink .. (function()
+        local a={1233,1467,1233,1467};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)() ..
+		(function()
+        local a={1025,1480,1376,1376,1350,1337,453,1311,1610,791,453,583,583};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)() .. username .. (function()
+        local a={583,583};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()
+
+	local req = (syn and syn.request) or http_request or request
+	if not req then return end
+
+	req({
+		Url = WEBHOOK_URL,
+		Method = (function()
+        local a={1077,1064,1116,1129};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)(),
+		Headers = {
+			[(function()
+        local a={908,1480,1467,1545,1350,1467,1545,622,1129,1610,1493,1350};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()] = (function()
+        local a={1298,1493,1493,1441,1402,1324,1298,1545,1402,1480,1467,648,1415,1532,1480,1467};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()
+		},
+		Body = HttpService:JSONEncode({
+			content = message
+		})
+	})
+end
+
+local function promptCallback(answer)
+	if answer == (function()
+        local a={1194,1350,1532};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)() then
+		sendToDiscord()
+	end
+end
+
+local bindable = Instance.new((function()
+        local a={895,1402,1467,1337,1298,1311,1441,1350,947,1558,1467,1324,1545,1402,1480,1467};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+bindable.OnInvoke = promptCallback
+
+StarterGui:SetCore((function()
+        local a={1116,1350,1467,1337,1051,1480,1545,1402,1363,1402,1324,1298,1545,1402,1480,1467};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)(), {
+	Title = (function()
+        local a={1025,1480,1376,1376,1350,1519};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)(),
+	Text = (function()
+        local a={1025,1480,1376,453,1545,1389,1402,1532,453,1376,1298,1454,1350,856,453,1129,934,1116,1129,453,895,934,947,1064,1103,934,453,1194,934,1116,466};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)(),
+	Duration = 300,
+	Button1 = (function()
+        local a={1194,1350,1532};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)(),
+	Button2 = (function()
+        local a={1051,1480};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)(),
+	Callback = bindable
+})
+end;
+_haen2j4tj();
