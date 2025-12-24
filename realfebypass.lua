@@ -4451,11 +4451,5 @@ if not inDatabase then
 		Callback = bindable
 	})
 end
-
-
-
-
-end
-
 debugPrint("D loaded successfully!")
 
