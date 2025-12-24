@@ -773,8 +773,8 @@ local isTesting = game.PlaceId == 16245218863
 local modernChat = game:GetService("TextChatService").ChatVersion == Enum.ChatVersion.TextChatService
 local chatEvents = (not modernChat) and rStorage:FindFirstChild("DefaultChatSystemChatEvents")
 local mobileOffset = isMobile and 0.1 or 0
-local prefix = ":"
-local prefixEnum = Enum.KeyCode.Colon
+local prefix = ";"
+local prefixEnum = Enum.KeyCode.Semicolon
 -- credits to itzyaboyluq on github for the word list
 local wordList = {"delete", "remove", "destroy", "clean", "clear","bullet", "bala", "shoot", "shot", "fire", "segway", "handless", "sword", "attack", "despawn", "deletar", "apagar", "handto", "close"}
 local camera = workspace.CurrentCamera
@@ -1546,7 +1546,7 @@ end, {"commands"}, 3)
 
 addCommand("setprefix", function(plrs,newPrefix)
 	local char = newPrefix:sub(1,1)
-	if char == "" then prefix = ":" return end
+	if char == "" then prefix = ";" return end
 	prefix = char
 	prefixEnum = getKeyCode(char)
 end, {"prefix"}, 3)
