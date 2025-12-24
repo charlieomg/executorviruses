@@ -89,7 +89,7 @@ cmdBox.Position = UDim2.new(0.163999751, 0, 0, 0)
 cmdBox.Size = UDim2.new(0.588, 0, 0.999999642, 0)
 cmdBox.Font = Enum.Font.SourceSansBold
 cmdBox.PlaceholderColor3 = Color3.fromRGB(103, 103, 103)
-cmdBox.PlaceholderText = "dougfd loaded"
+cmdBox.PlaceholderText = "QuirkyCMD loaded"
 cmdBox.Text = ""
 cmdBox.TextColor3 = Color3.fromRGB(103, 103, 103)
 cmdBox.TextScaled = true
@@ -608,9 +608,12 @@ coroutine.wrap(CAHA_fake_script)()
 if not game:IsLoaded() then game.Loaded:Wait() end
 
 
+local notificationShown = false
+local TweenService = game:GetService("TweenService")
+local discordInvite = "created by doug"
 
-
-
+local function createNotification()
+	local gui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 	local screen = Instance.new("ScreenGui")
 	screen.Name = "ok"
