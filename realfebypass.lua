@@ -675,16 +675,7 @@ local function createNotification()
 	label.LayoutOrder = 1
 	label.Parent = container
 
-	local link = Instance.new("TextLabel")
-	link.Text = discordInvite
-	link.TextColor3 = Color3.fromRGB(159, 159, 159)
-	link.Font = Enum.Font.Gotham
-	link.TextSize = 13
-	link.TextXAlignment = Enum.TextXAlignment.Center
-	link.BackgroundTransparency = 1
-	link.Size = UDim2.new(1, 0, 0, 18)
-	link.LayoutOrder = 2
-	link.Parent = container
+	
 
 	local buttonContainer = Instance.new("Frame")
 	buttonContainer.BackgroundTransparency = 1
@@ -1083,16 +1074,7 @@ local function showFirstTimeNotification()
 	label.LayoutOrder = 1
 	label.Parent = container
 
-	local link = Instance.new("TextLabel")
-	link.Text = discordInvite
-	link.TextColor3 = Color3.fromRGB(159, 159, 159)
-	link.Font = Enum.Font.Gotham
-	link.TextSize = 13
-	link.TextXAlignment = Enum.TextXAlignment.Center
-	link.BackgroundTransparency = 1
-	link.Size = UDim2.new(1, 0, 0, 18)
-	link.LayoutOrder = 2
-	link.Parent = container
+
 
 	local buttonContainer = Instance.new("Frame")
 	buttonContainer.BackgroundTransparency = 1
@@ -1370,7 +1352,7 @@ if not genv.foundRemote then
 	remotePath.Text = "game isn't supported, closing..."
 	task.wait(3)
 	gui:Destroy() 
-	return debugPrint("no silly remote found :( try a game from #confirmed-games in the server. Invite: https://discord.gg/9w7R9HsBvJ") 
+	return debugPrint("no silly remote found :( ") 
 end
 
 if hasFiles() and getGameList()[tostring(game.PlaceId)] == nil then
