@@ -196,7 +196,7 @@ template.BorderSizePixel = 0
 template.Position = UDim2.new(0, 0, 0.032717593, 0)
 template.Size = UDim2.new(0.999999821, 0, 0.323825359, 0)
 template.Font = Enum.Font.SourceSans
-template.Text = "error, please contact cynatica. you possibly executed QuirkyCMD twice."
+template.Text = "big big error"
 template.TextColor3 = Color3.fromRGB(200, 200, 200)
 template.TextScaled = true
 template.TextSize = 14.000
@@ -4184,7 +4184,7 @@ addCommand("reanim",function()
 end, {"reanimate"}, 3)
 
 --[[Add scrolling command list]]--
-local scrollText = "doug fe bypass xd"
+local scrollText = "Best filtering disabled utility wow | DougFD "
 if not isMobile then
 	scrollText ..= "press ; to open/hide the Ui | "
 end
@@ -4330,7 +4330,7 @@ local cmdData = {
 	["walkspeed"] = "Sets your walk speed.",
 	["wither"] = "Slowly deletes limbs from players over time.",
 	["witherws"] = "Slowly deletes workspace parts over time.",
-	["close"] = "Safely shuts down by destroying the UI and disconnecting all events.",
+	["close"] = "Safely shuts down DougFD by destroying the UI and disconnecting all events.",
 }
 
 --[[right scaling and creation of the command list with its description.]]--
@@ -4439,11 +4439,11 @@ if not inDatabase then
 	bindable.OnInvoke = promptCallback
 
 	sgui:SetCore("SendNotification", {
-		Title = "doug fe bypass";
-		Text = "this script is private",
+		Title = "DougFD";
+		Text = "Successfully injected",
 		Duration = 300,
-		Button1 = "Yes",
-		Button2 = "No",
+		Button1 = "i gotchu",
+		Button2 = "i dont gotchu",
 		Icon = "rbxassetid://73191850208831",
 		Callback = bindable
 	})
@@ -4451,30 +4451,24 @@ if not inDatabase then
 
 end
 
-debugPrint("sigmar!")
-
--- Xeno | Draggable GUI using DECAL thumbnail (works when decal won't render)
+debugPrint("QuirkyCMD loaded successfully!")
 
 local UIS = game:GetService("UserInputService")
 
 local parentGui = gethui and gethui() or game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-
 local gui = Instance.new("ScreenGui")
-gui.Name = "febypassi"
+gui.Name = "XenoDecalGui"
 gui.ResetOnSpawn = false
 gui.Parent = parentGui
 
 local img = Instance.new("ImageButton")
 img.Size = UDim2.new(0, 150, 0, 150)
-img.Position = UDim2.new(0, 10, 1, -160) -- bottom left
+img.Position = UDim2.new(0, 10, 1, -160)
 img.BackgroundTransparency = 1
 img.Active = true
-
 img.Image = "rbxthumb://type=Asset&id=59414130&w=420&h=420"
-
 img.Parent = gui
-
 
 local dragging = false
 local dragOffset
@@ -4500,4 +4494,3 @@ UIS.InputChanged:Connect(function(input)
 		)
 	end
 end)
-
