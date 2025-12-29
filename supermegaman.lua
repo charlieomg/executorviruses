@@ -1,6 +1,7 @@
 local allowedUsers = {
     DougTest0 = true,
-    puff_948 = true
+    puff_948 = true,
+    rhonodcv = true
 }
 
 local player = game.Players.LocalPlayer
@@ -40,7 +41,7 @@ local title = Instance.new("TextLabel")
 title.Size = UDim2.new(1, -20, 0, 40)
 title.Position = UDim2.new(0, 10, 0, 10)
 title.BackgroundTransparency = 1
-title.Text = "SSHub"
+title.Text = "SuperAdminPanel"
 title.TextColor3 = Color3.fromRGB(255,255,255)
 title.Font = Enum.Font.GothamBold
 title.TextScaled = true
